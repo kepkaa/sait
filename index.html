@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Переводы между картами</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="history-panel">
+            <h2>История переводов</h2>
+            <ul id="historyList">
+                <!-- История будет здесь -->
+            </ul>
+        </div>
+        
+        <div class="main-content">
+            <h1>Перевод между картами</h1>
+            
+            <form id="transferForm">
+                <div class="form-group">
+                    <label for="bankName">Банк получателя</label>
+                    <input type="text" id="bankName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="recipientCard">Номер карты получателя</label>
+                    <input type="text" id="recipientCard" required pattern="\d{16}" title="Введите 16 цифр без пробелов">
+                </div>
+                
+                <div class="form-group">
+                    <label for="recipientName">Имя получателя</label>
+                    <input type="text" id="recipientName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="senderCard">Номер вашей карты</label>
+                    <input type="text" id="senderCard" required pattern="\d{16}" title="Введите 16 цифр без пробелов">
+                </div>
+                
+                <div class="form-group">
+                    <label for="amount">Сумма перевода</label>
+                    <input type="number" id="amount" required min="1">
+                </div>
+                
+                <button type="submit">Перевести</button>
+            </form>
+            
+            <div class="transfer-table">
+                <h2>Последние переводы</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Банк получателя</th>
+                            <th>Карта получателя</th>
+                            <th>Ваша карта</th>
+                            <th>Сумма</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transfersTableBody">
+                        <!-- Таблица будет здесь -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
